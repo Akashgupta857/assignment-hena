@@ -1,6 +1,8 @@
 import type { Book, BookFormData } from "../types/book";
 
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+const API_BASE =
+  import.meta.env.VITE_API_URL ??
+  (import.meta.env.PROD ? "/api" : "http://localhost:3001");
 
 async function handleResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {

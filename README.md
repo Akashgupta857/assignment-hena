@@ -89,26 +89,33 @@ Seed data lives in [`db.json`](./db.json).
 
 ## Deployment
 
-The app uses a **split deployment**: JSON Server on [Render](https://render.com) (free tier) and the React frontend on [Vercel](https://vercel.com).
+### Option A — Single Vercel deploy (recommended)
 
-### 1. Deploy the API (Render)
+The repo includes serverless API routes in [`api/`](./api/) that mirror JSON Server endpoints. On Vercel, the frontend uses `/api` automatically in production.
 
-1. Push this repo to GitHub.
-2. Go to [Render Dashboard](https://dashboard.render.com/) → **New** → **Blueprint**.
-3. Connect your repo. Render reads [`render.yaml`](./render.yaml) and creates a web service.
-4. After deploy, copy the service URL (e.g. `https://book-management-api.onrender.com`).
+1. Push to GitHub.
+2. Import the repo on [Vercel](https://vercel.com) (framework: **Vite**).
+3. Deploy — no environment variables required for the default setup.
 
-### 2. Deploy the frontend (Vercel)
+```bash
+npx vercel --prod
+```
 
-1. Go to [Vercel](https://vercel.com) → **Add New Project** → import your GitHub repo.
-2. Framework preset: **Vite**
-3. Add environment variable:
-   - `VITE_API_URL` = your Render API URL (no trailing slash)
-4. Deploy.
+> **Note:** Serverless storage is in-memory per instance. Data may reset on cold starts. For persistent storage, use Option B.
 
-### 3. CORS
+### Option B — JSON Server on Render (persistent API)
 
-JSON Server enables CORS by default. If you use another host, ensure the API allows requests from your Vercel domain.
+1. Deploy the API using [`render.yaml`](./render.yaml) on [Render](https://render.com).
+2. Deploy the frontend on Vercel with:
+   - `VITE_API_URL` = your Render API URL (e.g. `https://book-management-api.onrender.com`)
+
+### Local development
+
+Use JSON Server for a persistent local database:
+
+```bash
+npm run dev:all
+```
 
 ## Project Structure
 
@@ -125,13 +132,19 @@ JSON Server enables CORS by default. If you use another host, ensure the API all
 
 ## Submission Links
 
-After deploying, update this section with your URLs:
-
 | Item              | URL |
 |-------------------|-----|
-| GitHub Repository | _Add your repo URL_ |
-| Live Application  | _Add your Vercel URL_ |
-| API (optional)    | _Add your Render API URL_ |
+| GitHub Repository | Create a repo and push — see [Push to GitHub](#push-to-github) below |
+| Live Application  | https://assignment-henna-one.vercel.app |
+| API (production)  | https://assignment-henna-one.vercel.app/api/books |
+
+### Push to GitHub
+
+```bash
+# Create a new repo on GitHub, then:
+git remote add origin https://github.com/YOUR_USERNAME/book-management-system.git
+git push -u origin main
+```
 
 Submit the assignment: [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdOutwnDspdl4Xat8cCA2h6F8HpVz1ji1Sna_nWAE0-zafwww/viewform?usp=publish-editor)
 
