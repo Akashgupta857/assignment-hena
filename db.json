@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "publicationYear": 1960
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "publicationYear": 1949
+    },
+    {
+      "id": "3",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "publicationYear": 1925
+    },
+    {
+      "id": "4",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "genre": "Non-Fiction",
+      "publicationYear": 2011
+    },
+    {
+      "id": "5",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "publicationYear": 1937
+    }
+  ]
+}
