@@ -134,17 +134,9 @@ npm run dev:all
 
 | Item              | URL |
 |-------------------|-----|
-| GitHub Repository | Create a repo and push — see [Push to GitHub](#push-to-github) below |
+| GitHub Repository | https://github.com/Akashgupta857/assignment-hena |
 | Live Application  | https://assignment-henna-one.vercel.app |
 | API (production)  | https://assignment-henna-one.vercel.app/api/books |
-
-### Push to GitHub
-
-```bash
-# Create a new repo on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/book-management-system.git
-git push -u origin main
-```
 
 Submit the assignment: [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdOutwnDspdl4Xat8cCA2h6F8HpVz1ji1Sna_nWAE0-zafwww/viewform?usp=publish-editor)
 
